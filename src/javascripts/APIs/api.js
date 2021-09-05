@@ -17,34 +17,32 @@
 //   // window.alert("API 서버에 문제가 발생했습니다.");
 //   }
 //   };
+const myData = { id: 1 };
+
+const option = {
+  method: "GET",
+  headers: {
+    Authorization: "KakaoAK 0f7acd5ca96b1d76578d02adc4161263"
+  },
+};
 
   const serviceKey = "v0Xi5lEsrLZd5JFZMKiz77Ps1LszbA9CsAOfAXjQTTOBDJhwKoyLwB5mbO0RcRv0gAIh2RpJYkNaelVmlE5zYg%3D%3D";
   const url ="https://dapi.kakao.com/v3/search/book?target=title"
-  const api = async (keyword = "") => {
+  const api = async (query = "") => {
   
     try {
-      console.log(`${url}&keyword=${keyword}`);
-      const response = await fetch(`${url}&query=${keyword}`,{
-        headers: {"Authorization: KakaoAK {REST_API_KEY}"}});
+      console.log(`${url}&query=${query}`);
+      const response = await fetch(`${url}&query=${query}`, option);
       // const responseBody = await response.text();
       const responseBody = await response.text();
-      const result = convert.xml2json(responseBody, {compact: true, spaces: 4});
-      // var result1 = convert.xml2json(responseBody, {compact: true, spaces: 4});
-      console.log(result)
+    
+      console.log(responseBody)
   
       return responseBody;
     } catch (error) {
     // window.alert("API 서버에 문제가 발생했습니다.");
-    }
-    };
-  
-    fetch("http://10.58.5.227:8000/account/sign-up",{
-      method : "POST",
-         body : JSON.stringify({
-               user_account : this.state.id,
-               password : this.state.password
-            })
-    })
+    }};
+
   export {
     api,
   };
