@@ -1,7 +1,6 @@
 {
   "name": "travel",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "xml-js": "latest",
     "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
@@ -20,5 +18,4 @@
     "request": "^2.88.2",
     "xml-js": "^1.6.11"
   }
-  
 }
